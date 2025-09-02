@@ -31,4 +31,14 @@ public class UserTypeEntity {
     @OneToMany(mappedBy = "tipoUsuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonIgnore //Este campo no es pedido en el json
     private List<UserEntity> usuarios = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "UserTypeEntity{" +
+                "id=" + id +
+                ", nombreTipo='" + nombreTipo + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", usuarios=" + usuarios +
+                '}';
+    }
 }
