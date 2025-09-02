@@ -31,4 +31,10 @@ public class AuthService {
         }
         return false;
     }
+
+    public Optional<UserEntity> obtenerUsuario(String email) {
+        // Buscar usuario completo en la base de datos
+        Optional<UserEntity> userOpt = repo.findByCorreo(email);
+        return (userOpt != null) ? userOpt : null;
+    }
 }
